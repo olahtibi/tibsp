@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script>// <![CDATA[// ]]>
+            function readEvalPrintLoop() {
+                try {
+                    printLineC("black", tibsp.run(document.getElementById('srcbox').value));
+                }
+                catch(e) {
+                    printLineC("red", e);
+                }
+            }
+        // ]]></script>
+        <style>
+            #srcbox {
+                font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+                height: 400px; width: 600px
+            }
+        </style>
+    </head>
+    <body>
+        <textarea id="srcbox">
+(block
+
+    (define rotate-left (lambda (L)
+        (append (tail L) (wrap (head L)))
+    ))
+
+    (define push-to-all (lambda (V LL)
+        (map (quote (lambda (l) (push V l)))
+         LL)
+    ))
+
+    (define permutations-helper (lambda (L R)
+        (switch
+            (= (length R) 0) (quote)
+            (= (length (tail L)) 0) (wrap L)
+            1  (append
+                   (push-to-all (head L)
+                                (permutations-helper (tail L) (tail L)))
+                   (permutations-helper (rotate-left L) (tail R)))
+        )
+    ))
+
+    (define permutations (lambda (L)
+        (permutations-helper L L)
+    ))
+
+    (printl (permutations (quote A B C)))
+
+)
+        </textarea>
+        <input type="button" value="Run" onclick="readEvalPrintLoop();"/>
+        <input type="button" value="Clear" onclick="document.getElementById('screen').innerHTML = ''"/>
+        <pre id="screen"></pre>
+        <script type="text/javascript" src="tibsp.js"></script>
+        <script type="text/javascript" src="tibsp.stdio.js"></script>
+        <script type="text/javascript" src="tibsp.stdlib.js"></script>
+</body>
+</html>
