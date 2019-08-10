@@ -34,7 +34,6 @@ try {
                 120
                 (quote "stdlib: recursive function calls are broken")
             )
-            
             (assert 
                 (apply (quote +) 1 2 3 4)
                 10
