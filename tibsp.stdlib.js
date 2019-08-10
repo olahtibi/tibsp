@@ -64,21 +64,21 @@ try {
 		  		19
 		  		(quote "stdlib: map: should work on expression with lambda")
 	  		)
-            (assert 
+            		(assert 
 		  		(length (quote 7 6 5))
 		  		3
 		  		(quote "stdlib: length: should return length of list")
 	  		)
-            (assert 
+            		(assert 
 		  		(length (wrap (' A A A)))
 		  		1
 		  		(quote "stdlib: length: should return length of wrapped list")
 	  		)
-            (assert
-                (push 1 (' 2 3 4))
-                (quote 1 2 3 4)
-                (quote "stdlib: push: should add element to the head of the list")
-            )
+            		(assert
+                		(push 1 (' 2 3 4))
+                		(quote 1 2 3 4)
+                		(quote "stdlib: push: should add element to the head of the list")
+            		)
 
 		)		
 	`);
