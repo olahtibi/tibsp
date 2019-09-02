@@ -1,6 +1,5 @@
 # tibsp
 This is a pure functional programming language similar to LISP.
-Interpreted in javascript and runs inside the browser.
 
 Demo: https://olahtibi.github.io/tibsp/
 
