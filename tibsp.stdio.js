@@ -14,20 +14,24 @@ function printLineC(color, content) {
     return null;
 }
 
-function listToStr(list) {
+function listToStr(list, wrap) {
     var str = "";
-    str += "(";
+    if(wrap) {
+        str += "(";
+    }
     for(var i = 0; i < list.length; i++) {
         var node = list[i];
         str += (i > 0 ? " " : "");
         if(Array.isArray(node)) {
-            str += listToStr(node);
+            str += listToStr(node, true);
         }
         else {
             str += node;
         }
     }
-    str += ")";
+    if(wrap) {
+        str += ")";
+    }
     return str;
 }
 
@@ -36,5 +40,5 @@ tibsp.defaultScope.map["printc"] = function(list) {
     return printLineC(list[0][0], list[0][1]);
 };
 tibsp.defaultScope.map["printl"] = function(list) {
-    printLine(listToStr(list));
+    printLine(listToStr(list, false));
 };
