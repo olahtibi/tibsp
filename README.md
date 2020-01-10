@@ -82,5 +82,15 @@ Recursive functions:
   
   -> 120
 ```
-
+Applies a fuction for each element of a collection:
+```
+  (block
+    (define successor (lambda (n)
+        (+ n 1)
+    ))
+    (printl (map successor (' 1 2 3)))
+  )
+  
+  -> (4 5 6)
+```
 
