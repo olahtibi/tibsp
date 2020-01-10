@@ -86,7 +86,7 @@ Applies a fuction on each elements of a collection:
 ```
   (block
     (define successor (lambda (n)
-        (+ n 1)
+      (+ n 1)
     ))
     (printl (map successor (' 1 2 3)))
   )
