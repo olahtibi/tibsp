@@ -91,6 +91,6 @@ Applies a fuction for each element of a collection:
     (printl (map successor (' 1 2 3)))
   )
   
-  -> (4 5 6)
+  -> (2 3 4)
 ```
 
