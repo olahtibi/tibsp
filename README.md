@@ -82,7 +82,7 @@ Recursive functions:
   
   -> 120
 ```
-Applies a fuction on each element of a collection:
+Applies a fuction on each elements of a collection:
 ```
   (block
     (define successor (lambda (n)
