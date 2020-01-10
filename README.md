@@ -37,7 +37,7 @@ Boolean value functions returns 1 for true, 0 for false
   
   -> 0
 ```
-Conditional statements treat 1 as true anything else as false and all of them are short circuit
+Conditional statements treat 1 as true anything else as false.
 ```
   (if 
     (= 11 (+ 3 (* 2 4))) 1111
@@ -46,6 +46,25 @@ Conditional statements treat 1 as true anything else as false and all of them ar
   
   -> 1111
 ```
-
-
-
+One program execution corresponds to one expression evaluation. To chain operation use "block" function.
+Use "define" for variable definitions.
+```
+  (block
+    (define PI 3.14)
+    (printl PI)
+  )
+  
+  -> 3.14
+```
+Lambda functions
+```
+  (block
+    (define PI 3.14)
+    (define area-of-circle (lambda (radius)
+        (* radius radius PI)
+    ))
+    (printl (area-of-circle 5))
+  )
+  
+  -> 78.5
+```
