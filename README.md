@@ -68,3 +68,19 @@ Lambda functions
   
   -> 78.5
 ```
+Recursive functions:
+```
+  (block
+    (define factorial (lambda (n) 
+      (if 
+        (<= n 1) 1 
+        (* n (fact (- n 1)))
+      )
+    ))
+    (factorial 5)
+  )
+  
+  -> 120
+```
+
+
