@@ -63,7 +63,7 @@ Lambda functions
     (define area-of-circle (lambda (radius)
         (* radius radius PI)
     ))
-    (printl (area-of-circle 5))
+    (area-of-circle 5)
   )
   
   -> 78.5
