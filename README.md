@@ -37,7 +37,7 @@ Boolean value functions returns 1 for true, 0 for false
   
   -> 0
 ```
-Conditional statements treat 1 as true anything else as false.
+Conditional statements: 1 represents "true" anything else considered to be "false".
 ```
   (if 
     (= 11 (+ 3 (* 2 4))) 1111
