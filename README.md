@@ -93,4 +93,47 @@ Applies a fuction on each elements of a collection:
   
   -> (2 3 4)
 ```
+List opeartions:
+``
+  (block
+    (printl (head (' A B C)))
+    (printl (tail (' A B C)))
+    (printl (wrap (' A)))
+  )
+  
+  -> A
+  -> (B C)
+  -> (A)
+```
+End finally:
+```
+(block
 
+    (define rotate-left (lambda (L)
+        (append (tail L) (wrap (head L)))
+    ))
+
+    (define push-to-all (lambda (V LL)
+        (map (quote (lambda (l) (push V l)))
+         LL)
+    ))
+
+    (define permutations-helper (lambda (L R)
+        (switch
+            (= (length R) 0) (quote)
+            (= (length (tail L)) 0) (wrap L)
+            1  (append
+                   (push-to-all (head L)
+                                (permutations-helper (tail L) (tail L)))
+                   (permutations-helper (rotate-left L) (tail R)))
+        )
+    ))
+
+    (define permutations (lambda (L)
+        (permutations-helper L L)
+    ))
+
+    (printl (permutations (quote A B C)))
+
+)
+```
