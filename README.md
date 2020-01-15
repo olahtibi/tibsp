@@ -107,7 +107,7 @@ List opeartions:
 ```
 End finally:
 ```
-(block
+  (block
 
     (define rotate-left (lambda (L)
         (append (tail L) (wrap (head L)))
@@ -135,5 +135,7 @@ End finally:
 
     (printl (permutations (quote A B C)))
 
-)
+  )
+  
+  -> ((A B C) (A C B) (B C A) (B A C) (C A B) (C B A))
 ```
