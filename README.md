@@ -94,7 +94,7 @@ Applies a fuction on each elements of a collection:
   -> (2 3 4)
 ```
 List opeartions:
-``
+```
   (block
     (printl (head (' A B C)))
     (printl (tail (' A B C)))
