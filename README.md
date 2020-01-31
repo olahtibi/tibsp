@@ -139,3 +139,4 @@ End finally:
   
   -> ((A B C) (A C B) (B C A) (B A C) (C A B) (C B A))
 ```
+Some difference from other languages: empty collection/NIL is expressed as (quote)
