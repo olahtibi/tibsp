@@ -46,7 +46,7 @@ Conditional statements: 1 represents "true" anything else considered to be "fals
   
   -> 1111
 ```
-One program execution corresponds to one expression evaluation. To chain operation use "block" function.
+One program execution corresponds to one expression evaluation. For evaluating multiple expressions in an order you can organize them into blocks.
 Use "define" for variable definitions.
 ```
   (block
